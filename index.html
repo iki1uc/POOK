@@ -1,1 +1,16 @@
+<pre id="pook"></pre>
+
+<script type="module">
+  import { POOK } from "./pook.js";
+
+  const RESPOS = ["RUN8","TMP","3hit90","dir","WpiR","MXU","CLONE","FAIL","9vec3tor"];
+
+  let out = "POOK :: Narrativ\n-------------------------\n";
+
+  RESPOS.forEach(r => {
+    out += POOK.story(r) + "\n";
+  });
+
+  document.getElementById("pook").textContent = out;
+</script>
 
