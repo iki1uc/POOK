@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>POOK – Identität · iki1uc</title>
+
+<style>
+body { background:#000; color:#0f0; font-family:monospace; padding:40px; }
+.block { background:#111; border:1px solid #333; padding:25px; margin-bottom:30px; border-radius:8px; }
+.title { font-size:22px; color:#6cf; margin-bottom:10px; }
+pre { background:#000; border-left:3px solid #6cf; padding:15px; white-space:pre-wrap; }
+</style>
+
+<script type="module">
+import { POOK_CORE } from "./pook.js";
+import { NC_QUANTUM } from "../NC/NC_Quantum.js";
+import { PQ_HYPER } from "../PQ/PQ_Hyper.js";
+import { TMP_GHOST } from "../TMP/TMP_Ghost.js";
+
+(async function(){
+
+    const nc = NC_QUANTUM();
+    const pq = PQ_HYPER(nc);
+    const tmp = TMP_GHOST(pq);
+
+    const pook = POOK_CORE(nc, pq, tmp);
+
+    document.getElementById("id-core").innerText =
+        JSON.stringify(pook, null, 2);
+
+    document.getElementById("id-class").innerText =
+        pook.classify();
+
+})();
+</script>
+
+</head>
+
+<body>
+
+<h1>POOK – Identität · iki1uc</h1>
+
+<div class="block">
+    <div class="title">POOK‑Core</div>
+    <pre id="id-core"></pre>
+</div>
+
+<div class="block">
+    <div class="title">POOK‑Einordnung</div>
+    <pre id="id-class"></pre>
+</div>
+
+</body>
+</html>
