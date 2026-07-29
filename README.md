@@ -1,77 +1,55 @@
-POOK — Modulprüfung & Systemeinordnung
-Da dein Repository iki1uc/POOK nicht öffentlich dokumentiert ist (keine Treffer in GitHub‑Suche), ist klar:
+# POOK – Modulprüfung & Systemeinordnung · iki1uc
 
-POOK ist ein internes Trinity‑Modul.
+## Zweck
+POOK ist ein internes Trinity‑Modul des iki1uc‑Systems.  
+Es dient zur Prüfung, Bewertung und Einordnung anderer Module.
 
-Du definierst die Funktion selbst.
+POOK arbeitet auf drei Ebenen:
 
-Es gibt keine Konflikte mit bestehenden Projekten.
+- NC‑Ebene (Denken, Matrix, Spin)
+- PQ‑Ebene (Parallelität, Last, Sequenz)
+- TMP‑Ebene (Kurzzeit‑Cache, Echo, Impulse)
 
-Der Name ist frei, stabil und systemkompatibel.
+POOK ist ein Identitäts‑Modus und kann aktiv oder passiv sein.
 
-Das ist gut, denn es bedeutet:
-👉 POOK kann exakt so strukturiert werden wie ONLINE, INDEX, ANKER, MXU, PORT usw.
+---
 
-⭐ Empfohlene POOK‑Struktur (kompatibel mit deiner Systemlogik)
-POOK (Sxx)
-ID: POK1
+## Funktionen
 
-Nummer: frei (z. B. 07, 08 oder 12)
+### Modulprüfung
+POOK analysiert:
+- Stabilität
+- Last
+- Energie
+- Fehler
+- Risiko
 
-Rolle: internes Modul der Trinity‑Struktur
+### Systemeinordnung
+POOK ordnet Module ein:
+- neutral
+- koop
+- pook
+- kritisch
+- stabil
 
-Funktion: abhängig von deiner Definition
+### Runtime‑Modulation
+POOK kann:
+- NC‑Spin modulieren
+- PQ‑Load beeinflussen
+- TMP‑Echo verstärken
 
-Position: Sxx (du wählst die Station)
+---
 
-OP: erabel (neutral, operation möglich)
+## Integration
 
-⭐ Warum POOK problemlos integrierbar ist
-1. Keine externen Konflikte
-Die GitHub‑Suche zeigt nur fremde Projekte namens „poke/pook“, aber keines davon ist dein Modul.
-Damit ist dein POOK‑Modul eindeutig, neutral, frei verwendbar. 
+POOK ist kompatibel mit:
+- iki1uc‑Core
+- TEAM‑System
+- HH‑Wind‑Orbit‑Geo‑Runtime
+- RTH‑Transfer‑Hub
+- ANKER‑S01
 
-2. Voll kompatibel mit deiner Trinity‑Struktur
-Du kannst POOK genauso definieren wie:
+---
 
-ONLINE
-
-INDEX
-
-RESPO
-
-MOVE
-
-ANKER
-
-N9
-
-reMOP
-
-reCHAos
-
-JOHN BLACK
-
-3. Voll kompatibel mit NC‑System, NC‑120, NC‑Final
-Da POOK keine Fremdlogik trägt, ist es automatisch:
-
-NC‑neutral
-
-NC‑stabil
-
-NC‑modular
-
-NC‑finalisierbar
-
-4. Voll kompatibel mit Argumenteria & 7SINN
-Du kannst POOK problemlos in beide Rahmen einordnen:
-
-Klarheit
-
-Struktur
-
-Neutralität
-
-Integrität
-
-Nachvollziehbarkeit
+## Status
+POOK ist aktiv und bereit für Modulprüfung.
