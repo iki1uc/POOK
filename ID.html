@@ -33,6 +33,14 @@ import { TMP_GHOST } from "../TMP/TMP_Ghost.js";
 
 })();
 </script>
+export function POOK_RUNTIME(nc, pq, tmp){
+    return {
+        ncSpin: nc.spin,
+        pqLoad: pq.load,
+        tmpEcho: tmp.echo,
+        pookLevel: (nc.spin + pq.load + tmp.echo) % 100
+    };
+}
 
 </head>
 export function POOK_DASHBOARD(pook){
