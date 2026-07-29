@@ -2,21 +2,16 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>POOK – Dashboard · iki1uc</title>
+<title>POOK – Narrativ · iki1uc</title>
 
 <style>
 body { background:#000; color:#0f0; font-family:monospace; padding:40px; }
-.block { background:#111; border:1px solid #333; padding:25px; margin-bottom:30px; border-radius:8px; }
-.title { font-size:22px; color:#6cf; margin-bottom:10px; }
-pre { background:#000; border-left:3px solid #6cf; padding:15px; white-space:pre-wrap; }
+pre { background:#111; padding:20px; border-left:3px solid #6cf; }
+h1 { color:#6cf; }
 </style>
 
 <script type="module">
-import { POOK_CORE } from "./pook.js";
-import { POOK_DASHBOARD } from "./pook.dashboard.js";
-import { POOK_RUNTIME } from "./pook.runtime.js";
-import { POOK_FUSION } from "./pook.fusion.js";
-
+import { POOK } from "./pook.js";
 import { NC_QUANTUM } from "../NC/NC_Quantum.js";
 import { PQ_HYPER } from "../PQ/PQ_Hyper.js";
 import { TMP_GHOST } from "../TMP/TMP_Ghost.js";
@@ -27,16 +22,22 @@ import { TMP_GHOST } from "../TMP/TMP_Ghost.js";
     const pq = PQ_HYPER(nc);
     const tmp = TMP_GHOST(pq);
 
-    const pook = POOK_CORE(nc, pq, tmp);
+    const core = POOK.core(nc, pq, tmp);
+    const runtime = POOK.runtime(nc, pq, tmp);
+    const classification = POOK.classify(core.stability);
 
-    document.getElementById("dashboard").innerText =
-        JSON.stringify(POOK_DASHBOARD(pook), null, 2);
+    const RESPOS = ["RUN8","TMP","3hit90","dir","WpiR","MXU","CLONE","FAIL","9vec3tor"];
 
-    document.getElementById("runtime").innerText =
-        JSON.stringify(POOK_RUNTIME(nc, pq, tmp), null, 2);
+    let out = "POOK :: Narrativ\n-------------------------\n";
 
-    document.getElementById("fusion").innerText =
-        JSON.stringify(POOK_FUSION(true, true, true), null, 2);
+    RESPOS.forEach(r => {
+        out += POOK.story(r) + "\n";
+    });
+
+    document.getElementById("pook").textContent = out;
+    document.getElementById("core").textContent = JSON.stringify(core, null, 2);
+    document.getElementById("runtime").textContent = JSON.stringify(runtime, null, 2);
+    document.getElementById("class").textContent = classification;
 
 })();
 </script>
@@ -45,22 +46,18 @@ import { TMP_GHOST } from "../TMP/TMP_Ghost.js";
 
 <body>
 
-<h1>POOK – Dashboard · iki1uc</h1>
+<h1>POOK – Narrativ · iki1uc</h1>
 
-<div class="block">
-    <div class="title">POOK‑Dashboard</div>
-    <pre id="dashboard"></pre>
-</div>
+<pre id="pook"></pre>
 
-<div class="block">
-    <div class="title">POOK‑Runtime</div>
-    <pre id="runtime"></pre>
-</div>
+<h1>POOK – Core</h1>
+<pre id="core"></pre>
 
-<div class="block">
-    <div class="title">POOK‑Fusion TEAM + HH + iki1uc</div>
-    <pre id="fusion"></pre>
-</div>
+<h1>POOK – Runtime</h1>
+<pre id="runtime"></pre>
+
+<h1>POOK – Einordnung</h1>
+<pre id="class"></pre>
 
 </body>
 </html>
