@@ -35,6 +35,14 @@ import { TMP_GHOST } from "../TMP/TMP_Ghost.js";
 </script>
 
 </head>
+export function POOK_DASHBOARD(pook){
+    return {
+        mode: pook.mode,
+        stability: pook.stability,
+        risk: pook.risk,
+        classification: pook.classify()
+    };
+}
 
 <body>
 
