@@ -1,16 +1,66 @@
-<pre id="pook"></pre>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>POOK – Dashboard · iki1uc</title>
+
+<style>
+body { background:#000; color:#0f0; font-family:monospace; padding:40px; }
+.block { background:#111; border:1px solid #333; padding:25px; margin-bottom:30px; border-radius:8px; }
+.title { font-size:22px; color:#6cf; margin-bottom:10px; }
+pre { background:#000; border-left:3px solid #6cf; padding:15px; white-space:pre-wrap; }
+</style>
 
 <script type="module">
-  import { POOK } from "./pook.js";
+import { POOK_CORE } from "./pook.js";
+import { POOK_DASHBOARD } from "./pook.dashboard.js";
+import { POOK_RUNTIME } from "./pook.runtime.js";
+import { POOK_FUSION } from "./pook.fusion.js";
 
-  const RESPOS = ["RUN8","TMP","3hit90","dir","WpiR","MXU","CLONE","FAIL","9vec3tor"];
+import { NC_QUANTUM } from "../NC/NC_Quantum.js";
+import { PQ_HYPER } from "../PQ/PQ_Hyper.js";
+import { TMP_GHOST } from "../TMP/TMP_Ghost.js";
 
-  let out = "POOK :: Narrativ\n-------------------------\n";
+(async function(){
 
-  RESPOS.forEach(r => {
-    out += POOK.story(r) + "\n";
-  });
+    const nc = NC_QUANTUM();
+    const pq = PQ_HYPER(nc);
+    const tmp = TMP_GHOST(pq);
 
-  document.getElementById("pook").textContent = out;
+    const pook = POOK_CORE(nc, pq, tmp);
+
+    document.getElementById("dashboard").innerText =
+        JSON.stringify(POOK_DASHBOARD(pook), null, 2);
+
+    document.getElementById("runtime").innerText =
+        JSON.stringify(POOK_RUNTIME(nc, pq, tmp), null, 2);
+
+    document.getElementById("fusion").innerText =
+        JSON.stringify(POOK_FUSION(true, true, true), null, 2);
+
+})();
 </script>
 
+</head>
+
+<body>
+
+<h1>POOK – Dashboard · iki1uc</h1>
+
+<div class="block">
+    <div class="title">POOK‑Dashboard</div>
+    <pre id="dashboard"></pre>
+</div>
+
+<div class="block">
+    <div class="title">POOK‑Runtime</div>
+    <pre id="runtime"></pre>
+</div>
+
+<div class="block">
+    <div class="title">POOK‑Fusion TEAM + HH + iki1uc</div>
+    <pre id="fusion"></pre>
+</div>
+
+</body>
+</html>
